@@ -6,7 +6,7 @@ public abstract class Pessoa {
 	public abstract void exibirInfo();
 	
 	public Pessoa (String nome, String cpf) {
-		this.nomePessoa = nome;
+		this.setNomePessoa(nome);
 		this.cpf = cpf;
 		
 	}

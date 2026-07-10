@@ -1,16 +1,29 @@
 package modelos;
 
 public class Passaro extends Animal {
-
-	public Passaro(String nomeAnimal, int idadeAnimal, float pesoAnimal) {
+	private String especie;
+	
+	public Passaro(String nomeAnimal, int idadeAnimal, float pesoAnimal, String especie) {
 		super(nomeAnimal, idadeAnimal, pesoAnimal);
-		// TODO Auto-generated constructor stub
+		this.setEspecie(especie);
 	}
 
 	@Override
 	public void emitirSom() {
-		// TODO Auto-generated method stub
+		System.out.println("Piu-piu!");
+	}
 
+	public String getEspecie() {
+		return this.especie;
+	}
+
+	public void setEspecie(String especie) {
+		if (especie == null || especie.isBlank()) {
+			System.out.println("Especie invalida.");
+		}
+		else {
+			this.especie = especie;
+		}
 	}
 
 }

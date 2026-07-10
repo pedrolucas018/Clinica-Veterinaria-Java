@@ -9,12 +9,13 @@ public class Cachorro extends Animal {
 		
 	}
 	
+	@Override
 	public void emitirSom() {
 		System.out.println("Au Au!");
 	}
 
 	public String getRaca() {
-		return raca;
+		return this.raca;
 	}
 
 	public void setRaca(String raca) {

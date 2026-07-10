@@ -1,16 +1,25 @@
 package modelos;
 
 public class Gato extends Animal {
-
-	public Gato(String nomeAnimal, int idadeAnimal, float pesoAnimal) {
+	private boolean ehCastrado;
+	
+	public Gato(String nomeAnimal, int idadeAnimal, float pesoAnimal, boolean ehCastrado) {
 		super(nomeAnimal, idadeAnimal, pesoAnimal);
-		// TODO Auto-generated constructor stub
+		this.setEhCastrado(ehCastrado);
 	}
 
 	@Override
 	public void emitirSom() {
-		// TODO Auto-generated method stub
+		System.out.println("Miau!");
 
+	}
+
+	public boolean isEhCastrado() {
+		return this.ehCastrado;
+	}
+
+	public void setEhCastrado(boolean ehCastrado) {
+		this.ehCastrado = ehCastrado;
 	}
 
 }

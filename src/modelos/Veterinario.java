@@ -5,7 +5,7 @@ public class Veterinario extends Pessoa {
 	
 	public Veterinario(String nome, String cpf, String especialidade) {
 		super(nome, cpf);
-		this.especialidade = especialidade;
+		this.setEspecialidade(especialidade);
 		
 	}
 	
