@@ -5,7 +5,7 @@ public class Veterinario extends Pessoa implements Exibivel {
 	
 	public Veterinario(String nome, String cpf, String especialidade) {
 		super(nome, cpf);
-		this.setEspecialidade(especialidade);
+		setEspecialidade(especialidade);
 		
 	}
 	
