@@ -6,7 +6,7 @@ public abstract class Pessoa {
 	public abstract void exibirInfo();
 	
 	public Pessoa (String nome, String cpf) {
-		this.setNomePessoa(nome);
+		setNomePessoa(nome);
 		this.cpf = cpf;
 		
 	}
@@ -17,7 +17,7 @@ public abstract class Pessoa {
 	
 	public void setNomePessoa(String nomePessoa) {
 		if (nomePessoa == null || nomePessoa.isBlank()){
-			System.out.println("O nome inserido é invalido");
+			throw new IllegalArgumentException("O nome inserido é invalido");
 		} 
 		else {
 			this.nomePessoa = nomePessoa;

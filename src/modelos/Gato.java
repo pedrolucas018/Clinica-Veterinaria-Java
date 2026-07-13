@@ -5,7 +5,7 @@ public class Gato extends Animal {
 	
 	public Gato(String nomeAnimal, int idadeAnimal, float pesoAnimal, boolean ehCastrado) {
 		super(nomeAnimal, idadeAnimal, pesoAnimal);
-		this.setEhCastrado(ehCastrado);
+		setEhCastrado(ehCastrado);
 	}
 
 	@Override

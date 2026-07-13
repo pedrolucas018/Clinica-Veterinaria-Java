@@ -5,8 +5,7 @@ public class Cachorro extends Animal {
 	
 	public Cachorro(String nomeAnimal, int idadeAnimal, float pesoAnimal, String raca){
 		super(nomeAnimal, idadeAnimal, pesoAnimal);
-		this.setRaca(raca);
-		
+		setRaca(raca);
 	}
 	
 	@Override
@@ -20,7 +19,7 @@ public class Cachorro extends Animal {
 
 	public void setRaca(String raca) {
 		if (raca == null || raca.isBlank()) {
-			System.out.println("Raça invalida");
+			throw new IllegalArgumentException("Raça inserida inválida");
 		}
 		else {
 			this.raca = raca;

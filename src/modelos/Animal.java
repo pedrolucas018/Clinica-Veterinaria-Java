@@ -15,11 +15,11 @@ public abstract class Animal {
 		historicoDeConsultasDoAnimal.add(consulta);
 	}
 	
-	//construtor
+	//construtor: sem o array list pois sera adicionado ao longo do programa
 	public Animal (String nomeAnimal, int idadeAnimal, float pesoAnimal) {
-		this.nomeAnimal = nomeAnimal;
-		this.idadeAnimal = idadeAnimal;
-		this.pesoAnimal = pesoAnimal;
+		setNomeAnimal(nomeAnimal);
+		setIdadeAnimal(idadeAnimal);
+		setPesoAnimal(pesoAnimal);
 	}
 	
 	public String getNomeAnimal() {
@@ -29,7 +29,7 @@ public abstract class Animal {
 	
 	public void setNomeAnimal (String nomeAnimal) {
 		if (nomeAnimal == null || nomeAnimal.isBlank()) {
-			System.out.println("String inválida");
+			throw new IllegalArgumentException("Nome de animal inserido inválido");
 		}
 		else {
 			this.nomeAnimal = nomeAnimal;
@@ -43,7 +43,7 @@ public abstract class Animal {
 	
 	public void setIdadeAnimal(int idadeAnimal){
 		if (idadeAnimal < 0) {
-			System.out.println("Idade inválida");
+			throw new IllegalArgumentException("Idade inserida inválida");
 		} 
 		else {
 			this.idadeAnimal = idadeAnimal;
@@ -56,7 +56,7 @@ public abstract class Animal {
 	
 	public void setPesoAnimal(float pesoAnimal) {
 		if (pesoAnimal < 0.01F) {
-			System.out.println("Peso inválido");
+			throw new IllegalArgumentException("Peso inserido inválido");
 		}
 		else {
 			this.pesoAnimal = pesoAnimal;

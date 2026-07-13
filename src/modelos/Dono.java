@@ -4,7 +4,7 @@ import java.util.ArrayList;
 // memoria, assim, poderei adicionar ou remover animais a um dono sem me preocupar com 
 // o estouro do array
 
-public class Dono extends Pessoa {
+public class Dono extends Pessoa implements Exibivel {
 	private ArrayList<Animal> listaDeAnimaisDoDono = new ArrayList<>();
 	
 	public Dono(String nome, String cpf){
@@ -19,14 +19,14 @@ public class Dono extends Pessoa {
 		return this.listaDeAnimaisDoDono;
 	}
 
+	public int getQuantidadeDeAnimais() {
+	    return this.listaDeAnimaisDoDono.size();
+	}
 	
 	public void adicionarAnimal(Animal animal) {
 		this.listaDeAnimaisDoDono.add(animal);
 	}
 	
-	public int getQuantidadeDeAnimais() {
-	    return this.listaDeAnimaisDoDono.size();
-	}
 	@Override
 	public void exibirInfo() {
 		System.out.println("Nome: " + getNomePessoa());

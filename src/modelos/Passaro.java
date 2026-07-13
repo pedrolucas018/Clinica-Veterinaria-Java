@@ -5,7 +5,7 @@ public class Passaro extends Animal {
 	
 	public Passaro(String nomeAnimal, int idadeAnimal, float pesoAnimal, String especie) {
 		super(nomeAnimal, idadeAnimal, pesoAnimal);
-		this.setEspecie(especie);
+		setEspecie(especie);
 	}
 
 	@Override
@@ -19,7 +19,7 @@ public class Passaro extends Animal {
 
 	public void setEspecie(String especie) {
 		if (especie == null || especie.isBlank()) {
-			System.out.println("Especie invalida.");
+			throw new IllegalArgumentException("Espécie inserida inválida");
 		}
 		else {
 			this.especie = especie;

@@ -1,6 +1,6 @@
 package modelos;
 
-public class Veterinario extends Pessoa {
+public class Veterinario extends Pessoa implements Exibivel {
 	private String especialidade; 
 	
 	public Veterinario(String nome, String cpf, String especialidade) {
@@ -16,7 +16,7 @@ public class Veterinario extends Pessoa {
 	
 	public void setEspecialidade (String especialidade) {
 		if (especialidade == null || especialidade.isBlank()){
-	        System.out.println("A especialidade inserida eh invalida");
+			throw new IllegalArgumentException("A especialidade inserida é invalida");
 	    }
 	    else {
 	        this.especialidade = especialidade;
