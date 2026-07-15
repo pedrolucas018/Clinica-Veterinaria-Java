@@ -16,7 +16,6 @@ public class VeterinarioService {
 		listaDeVeterinarios.add(novoVeterinario);
 		
 	}
-
 	
 	public Veterinario buscarVeterinarioPorCpf (String cpf) {
 		for (Veterinario vet: listaDeVeterinarios) {

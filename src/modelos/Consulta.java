@@ -7,7 +7,7 @@ public class Consulta {
 	private Veterinario veterinario;
 	private double valor;
 	
-	public Consulta(LocalDate data, String diagnostico, Veterinario veterinario, double valor) {
+	public Consulta (LocalDate data, String diagnostico, Veterinario veterinario, double valor) {
 		setData(data);
 		setDiagnostico(diagnostico);
 		setVeterinario(veterinario);
@@ -18,7 +18,7 @@ public class Consulta {
 		return data;
 	}
 
-	public void setData(LocalDate data) {
+	public void setData (LocalDate data) {
 		if (data == null || data.isAfter(LocalDate.now())) {
 			throw new IllegalArgumentException("Data inserida inválida");
 		} else {
@@ -26,11 +26,11 @@ public class Consulta {
 		}
 	}
 
-	public String getDiagnostico() {
+	public String getDiagnostico () {
 		return diagnostico;
 	}
 
-	public void setDiagnostico(String diagnostico) {
+	public void setDiagnostico (String diagnostico) {
 		if (diagnostico == null || diagnostico.isBlank()) {
 			throw new IllegalArgumentException("Diagnóstico inserido inválido");
 		} else {
@@ -38,11 +38,11 @@ public class Consulta {
 		}
 	}
 
-	public Veterinario getVeterinario() {
+	public Veterinario getVeterinario () {
 		return veterinario;
 	}
 
-	public void setVeterinario(Veterinario veterinario) {
+	public void setVeterinario (Veterinario veterinario) {
 		if (veterinario == null) {
 			throw new IllegalArgumentException("Veterinário inserido inválido");
 		} else {
@@ -50,11 +50,11 @@ public class Consulta {
 		}
 	}
 
-	public double getValor() {
+	public double getValor () {
 		return valor;
 	}
 
-	public void setValor(double valor) {
+	public void setValor (double valor) {
 		if (valor < 0.0 ) {
 			throw new IllegalArgumentException("Valor inserido inválido");
 		} 
