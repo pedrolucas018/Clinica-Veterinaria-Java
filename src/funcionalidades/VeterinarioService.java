@@ -1,35 +1,30 @@
 package funcionalidades;
-import java.util.ArrayList;
+
+import java.util.Map;
+import java.util.HashMap;
 import modelos.Veterinario;
 
 public class VeterinarioService {
-	private ArrayList<Veterinario> listaDeVeterinarios = new ArrayList<>();
+	private Map<String, Veterinario> listaDeVeterinarios = new HashMap<>();
 	
 	public void cadastrarVeterinario (String nome, String cpf, String especialidade) {
-		for (Veterinario vet : listaDeVeterinarios) {
-				if (vet.getCpf().equals(cpf)) {
-					throw new IllegalArgumentException("CPF já cadastrado!");
-				} 
-		}
-		
-		Veterinario novoVeterinario = new Veterinario(nome, cpf, especialidade);
-		listaDeVeterinarios.add(novoVeterinario);
+		if (listaDeVeterinarios.containsKey(cpf)) {
+			throw new IllegalArgumentException("Veterinário já cadastrado!");
+		} 
+		listaDeVeterinarios.put(cpf, new Veterinario(nome, cpf, especialidade));
 		
 	}
 	
 	public Veterinario buscarVeterinarioPorCpf (String cpf) {
-		for (Veterinario vet: listaDeVeterinarios) {
-			if (vet.getCpf().equals(cpf)) {
-	            return vet;
-	        } 
-		}
-		return null;
+		return listaDeVeterinarios.get(cpf);
 	}
 	
 	public void listarVeterinarios() {
-		for (int i = 0; i < listaDeVeterinarios.size(); i++) {
-			System.out.printf("Veterinário %d: %s%n", i+1, listaDeVeterinarios.get(i).getNomePessoa());
-		}
+	    int i = 1;
+	    for (Veterinario vet : listaDeVeterinarios.values()) {
+	        System.out.printf("Veterinario %d: %s%n", i, vet.getNomePessoa());
+	        i++;
+	    }
 	}
 	
 }

@@ -19,24 +19,18 @@ public class AnimalService {
         this.donoService = donoService;
     }
     
-    public Animal buscarAnimalPorNome (String cpfDono, String nomeAnimal) {
-    	Dono dono = donoService.buscarDonoPorCpf(cpfDono);
-    	
-    	if (dono == null) {
+    public Animal buscarAnimalPorNome(String cpfDono, String nomeAnimal) {
+
+        Dono dono = donoService.buscarDonoPorCpf(cpfDono);
+        if (dono == null) {
             throw new IllegalArgumentException("Dono não encontrado!");
         }
-    	
-    	// Percorre todos os animais do dono. A cada iteração, a variável "animal"
-    	// recebe um objeto Animal da lista. Se o nome informado coincidir (ignorando
-    	// maiúsculas/minúsculas), retorna esse objeto. Se nenhum for encontrado,
-    	// retorna null.
-    	for (Animal animal : dono.getListaDeAnimaisDoDono()) {
-    		if (animal.getNomeAnimal().equalsIgnoreCase(nomeAnimal)) {
-    			return animal;
-    		}
-    	}
-    	
-    	return null;
+
+        return dono.getListaDeAnimaisDoDono()
+                   .stream()
+                   .filter(animal -> animal.getNomeAnimal().equalsIgnoreCase(nomeAnimal))
+                   .findFirst()
+                   .orElse(null);
     }
 
     public void cadastrarCachorro(String cpfDono, String nomeAnimal, int idade, float peso, String raca) {
