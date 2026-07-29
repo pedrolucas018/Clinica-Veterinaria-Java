@@ -49,8 +49,8 @@ src/
     └── Main.java           (menu interativo)
 ```
 
-- **modelos**: representam as entidades do domínio — sabem validar a si mesmas, mas não conhecem o restante do sistema
-- **funcionalidades**: contém a lógica de negócio que depende de múltiplos objetos (cadastro com verificação de duplicata, busca, remoção)
+- **modelos**: representam as entidades do domínio. Sabem validar a si mesmas, mas não conhecem o restante do sistema
+- **funcionalidades**: contém a lógica de negócio que depende de múltiplos objetos (cadastro com verificação de duplicata, busca, remoção e etc)
 - **execucao**: ponto de entrada do programa, responsável apenas por orquestrar o menu e capturar entrada do usuário
 
 ## Como rodar
@@ -81,11 +81,11 @@ Este foi meu primeiro projeto aplicando Orientação a Objetos em Java de forma 
 
 ## Melhorias futuras
 
-- [ ] Adicionar opções no menu para listar todos os donos (`DonoService.listarDonos()`) e todos os veterinários (`VeterinarioService.listarVeterinarios()`) cadastrados — métodos já implementados, mas não expostos no menu
+- [ ] Adicionar opções no menu para listar todos os donos (`DonoService.listarDonos()`) e todos os veterinários (`VeterinarioService.listarVeterinarios()`) cadastrados, métodos já implementados, mas não expostos no menu
 - [ ] Tratar entradas inesperadas do usuário (ex: texto onde se espera um número), envolvendo as leituras do `Scanner` em `try`/`catch` com `InputMismatchException`
 - [ ] Persistência de dados (salvar em arquivo ou banco de dados), já que atualmente os dados existem apenas em memória durante a execução
 - [ ] Permitir edição de dados já cadastrados (ex: atualizar peso ou idade de um animal)
-- [ ] Refatorar a duplicação de código nos fluxos de cadastro de cachorro/gato/pássaro no `Main`, extraindo a leitura de dados comuns para um método auxiliar
+- [ ] Refatoração de código geral, otimização de estruturas de dados
 
 ## Autor
 
